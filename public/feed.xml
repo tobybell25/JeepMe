@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Viral News Hub</title>
+    <link>http://localhost:8000</link>
+    <description>Latest & Viral News from Around the World</description>
+    <language>en</language>
+    <lastBuildDate>Sat, 14 Feb 2026 14:45:50 </lastBuildDate>
+    <atom:link href="http://localhost:8000/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jeep Wrangler 4xe Recall Alert: 320,000 Hybrids at Fire Risk – What Trail-Ready Owners Need to Know</title>
+      <link>http://localhost:8000/posts/jeep-wrangler-4xe-recall-battery-fire-risk-320000.html</link>
+      <description>Big recall hits the Jeep Wrangler 4xe – potential battery fire risk has owners parking outside. Here&apos;s the rugged truth on your hybrid trail beast.</description>
+      <pubDate>Sat, 14 Feb 2026 14:38:41 </pubDate>
+      <guid>http://localhost:8000/posts/jeep-wrangler-4xe-recall-battery-fire-risk-320000.html</guid>
+      <category>wrangler</category>
+      <enclosure url="/images/jeep-wrangler-4xe-recall-battery-fire-risk-320000-1771054721.jpg" type="image/jpeg" />
+    </item>
+  </channel>
+</rss>
