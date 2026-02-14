@@ -12,7 +12,6 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="icon" type="image/png" href="/assets/favicon.png">
 
     <!-- Schema.org -->
@@ -21,191 +20,219 @@
     </script>
 
     <style>
-        :root { --primary-color: #ffba00; --bg-dark: #121212; --text-light: #e0e0e0; }
-        body { background-color: var(--bg-dark); color: var(--text-light); font-family: 'Roboto', sans-serif; }
-        .article-title { font-family: 'Russo One', sans-serif; color: #fff; font-size: 2.5rem; line-height: 1.2; margin-bottom: 20px; }
-        .navbar { background: #000; border-bottom: 2px solid #333; }
-        .logo-text { font-family: 'Russo One', sans-serif; color: #fff; text-transform: uppercase; }
+        /* --- RESET & VARIABLES --- */
+        :root { 
+            --primary-color: #ffba00; 
+            --bg-dark: #050505; 
+            --bg-card: #121212;
+            --text-light: #f0f0f0; /* Teks lebih terang */
+            --text-dim: #b0b0b0;
+        }
+        
+        body { 
+            background-color: var(--bg-dark); 
+            color: var(--text-light); 
+            font-family: 'Roboto', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.6;
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1, h2, h3, h4 { font-family: 'Russo One', sans-serif; color: #fff; }
+        a { text-decoration: none; transition: 0.3s; }
+
+        /* --- NAVIGATION --- */
+        .navbar { background: #000; border-bottom: 3px solid var(--primary-color); padding: 15px 0; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo-text { font-family: 'Russo One', sans-serif; color: #fff; text-transform: uppercase; font-size: 1.8rem; letter-spacing: 1px; }
         .logo-text span { color: var(--primary-color); }
-        .nav-link { color: #ccc; text-decoration: none; text-transform: uppercase; font-weight: bold; font-family: 'Russo One'; margin-left: 20px; }
-        .nav-link:hover { color: var(--primary-color); }
-        .article-content { font-size: 1.15rem; line-height: 1.8; color: #ddd; }
-        .article-content h2 { color: var(--primary-color); font-family: 'Russo One'; margin-top: 40px; }
-        .article-content a { color: var(--primary-color); }
-        .tag { background: #333; color: #fff; padding: 5px 10px; border-radius: 4px; text-decoration: none; margin-right: 10px; font-size: 0.9rem; }
-        .tag:hover { background: var(--primary-color); color: #000; }
+        .nav-menu a { font-family: 'Russo One'; text-transform: uppercase; color: #aaa; margin-left: 20px; font-size: 0.9rem; }
+        .nav-menu a:hover { color: var(--primary-color); }
+
+        /* --- ARTICLE LAYOUT --- */
+        .article-container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+        
+        .article-header { text-align: center; margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 30px; }
+        .article-meta { margin-bottom: 15px; font-size: 0.9rem; color: var(--text-dim); }
+        .category-badge { background: var(--primary-color); color: #000; padding: 4px 10px; font-weight: bold; text-transform: uppercase; border-radius: 4px; margin-right: 10px; }
+        
+        .article-title { font-size: 2.8rem; line-height: 1.2; margin-bottom: 20px; text-transform: uppercase; }
+        
+        .featured-image { width: 100%; border-radius: 8px; margin-bottom: 40px; border: 1px solid #333; box-shadow: 0 5px 20px rgba(0,0,0,0.5); }
+
+        /* --- CONTENT STYLING (THE FIX) --- */
+        .article-content { 
+            font-size: 1.15rem; 
+            line-height: 1.8; 
+            color: #e5e5e5; /* Warna dasar teks konten */
+        }
+        
+        /* Maksa semua elemen teks jadi terang */
+        .article-content p { 
+            color: #e5e5e5 !important; 
+            margin-bottom: 1.5rem; 
+            text-align: left;
+        }
+        
+        .article-content li { 
+            color: #e5e5e5 !important; 
+            margin-bottom: 10px; 
+        }
+
+        .article-content h2 { 
+            color: var(--primary-color) !important; /* H2 warna Orange Jeep */
+            font-size: 1.8rem; 
+            margin-top: 40px; 
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .article-content h3 { 
+            color: #fff !important; 
+            font-size: 1.4rem; 
+            margin-top: 30px; 
+        }
+
+        .article-content strong, .article-content b {
+            color: #fff; /* Bold jadi putih murni */
+        }
+
+        .article-content a { 
+            color: var(--primary-color); 
+            border-bottom: 1px dotted var(--primary-color);
+        }
+        
+        .article-content ul, .article-content ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* --- FOOTER ARTICLE --- */
+        .article-footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #333; }
+        .tag { display: inline-block; background: #1a1a1a; color: #888; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; margin-right: 10px; border: 1px solid #333; }
+        .tag:hover { border-color: var(--primary-color); color: var(--primary-color); }
+
+        /* --- SITE FOOTER --- */
+        .site-footer { background: #050505; padding: 60px 0 30px; border-top: 3px solid var(--primary-color); margin-top: 80px; }
+        .footer-content { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: left;}
+        .footer-col h3 { color: #fff; font-size: 1.2rem; margin-bottom: 20px; text-transform: uppercase; }
+        .footer-col ul { list-style: none; padding: 0; }
+        .footer-col li { margin-bottom: 10px; }
+        .footer-col a { color: #888; font-size: 0.9rem; }
+        .footer-col a:hover { color: var(--primary-color); }
+        .footer-bottom { text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #222; color: #555; font-size: 0.8rem; }
+
+        @media (max-width: 768px) {
+            .article-title { font-size: 2rem; }
+            .nav-menu { display: none; } /* Mobile menu simple hide for now */
+        }
     </style>
 </head>
 
-<body class="article-page">
+<body>
     <!-- Navigation -->
-    <nav class="navbar" style="padding: 15px 0;">
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <a href="/" class="logo" style="text-decoration: none; display: flex; align-items: center;">
-                <span class="logo-text" style="font-size: 1.5rem;">JEEP<span>ME</span></span>
-            </a>
-            <div class="nav-menu" style="display: flex;">
-                <a href="/" class="nav-link">Home</a>
-                <a href="/category/wrangler.html" class="nav-link">Wrangler</a>
-                <a href="/category/gladiator.html" class="nav-link">Gladiator</a>
-                <a href="/category/offroad-tech.html" class="nav-link">Tech</a>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo-text">JEEP<span>ME</span></a>
+            <div class="nav-menu">
+                <a href="/">Home</a>
+                <a href="/category/wrangler.html">Wrangler</a>
+                <a href="/category/gladiator.html">Gladiator</a>
+                <a href="/category/offroad-tech.html">Tech</a>
+                <a href="/category/concepts.html">Concepts</a>
             </div>
         </div>
     </nav>
 
-    <!-- Article Header -->
-    <article class="article" style="max-width: 800px; margin: 40px auto; padding: 0 20px;">
-        <header class="article-header" style="text-align: center; margin-bottom: 40px;">
-            <div class="article-meta" style="margin-bottom: 15px;">
-                <a href="/category/wrangler.html" class="category-badge" style="background: #ffba00; color: #000; padding: 4px 8px; text-decoration: none; font-weight: bold; text-transform: uppercase;">wrangler</a>
-                <span class="article-date" style="color: #888; margin-left: 10px;">February 14, 2026</span>
+    <!-- Main Article -->
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-meta">
+                <a href="/category/wrangler.html" class="category-badge">wrangler</a>
+                <span>February 14, 2026</span>
             </div>
-
             <h1 class="article-title">Jeep Wrangler 4xe Recall Alert: 320,000 Hybrids at Fire Risk – What Trail-Ready Owners Need to Know</h1>
-
-            <div class="article-author" style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 20px;">
-                <div class="author-info">
-                    <span class="author-name" style="color: #aaa;">By <strong style="color: #fff;">Viral News Team</strong></span>
-                </div>
+            <div style="margin-top: 15px; color: #888;">
+                By <strong style="color: #fff;">Viral News Team</strong> &bull; 2 min read
             </div>
         </header>
 
-        <!-- Featured Image -->
-        <div class="featured-image" style="margin-bottom: 40px;">
-            <img src="/images/jeep-wrangler-4xe-recall-battery-fire-risk-320000-1771054721.jpg" alt="Jeep Wrangler 4xe Recall Alert: 320,000 Hybrids at Fire Risk – What Trail-Ready Owners Need to Know" style="width: 100%; border-radius: 8px; border: 1px solid #333;">
-        </div>
+        
+        <img src="/images/jeep-wrangler-4xe-recall-battery-fire-risk-320000-1771054721.jpg" alt="Jeep Wrangler 4xe Recall Alert: 320,000 Hybrids at Fire Risk – What Trail-Ready Owners Need to Know" class="featured-image">
+        
 
-        <!-- Article Content -->
+        <!-- CONTENT AREA (Warna teks sudah diperbaiki di CSS di atas) -->
         <div class="article-content">
             <p>Hey Jeep fam, if you're rolling in a Wrangler 4xe, this one's for you. Stellantis just dropped a major recall on over 320,000 plug-in hybrid Jeeps in the US alone – with the Wrangler 4xe (2020-2025 models) taking the biggest hit. We're talking high-voltage battery packs that might have damaged cell separators, opening the door to thermal runaway and fire – even when your rig's parked or crawling the trail.</p><h2>The Raw Details on the Recall</h2><p>This ain't some minor glitch. NHTSA reports show fires linked to this issue, with at least one injury noted. The high-voltage lithium-ion packs (Samsung SDI cells) can fail internally, risking spontaneous combustion day or night. Stellantis is telling owners: <strong>park outside, away from structures, and stop charging</strong> until the fix rolls out. Remedy's in the works – stay tuned for dealer notifications.</p><h2>Why It Matters for Wrangler Diehards</h2><p>The Wrangler 4xe is a beast: that 2.0L turbo-four teamed with electric torque delivers 375 hp and 470 lb-ft of twist, giving you insane low-end grunt for rock crawling and silent electric stealth on the trails. With locking differentials, killer articulation, and hybrid crawl ratios that make tough sections feel easy, it's built for adventure. But this battery fire risk throws a wrench in the mix – nobody wants their trail rig turning into a campfire.</p><ul><li><strong>Powertrain Specs</strong>: 2.0L turbo + electric motor, 375 hp combined, 470 lb-ft torque</li><li><strong>Off-Road Edge</strong>: Electric mode for zero-emission trail running, instant torque for obstacles</li><li><strong>Mod Potential</strong>: Lift it, slap on bigger tires, add armor – the 4xe handles mods like a champ (just watch that hybrid system)</li><li><strong>Recall Scope</strong>: 2020-2025 Wrangler 4xe (plus Grand Cherokee 4xe, but we know where your heart is)</li></ul><h2>Stay Rugged, Stay Safe</h2><p>Check your VIN on the NHTSA site or Jeep's portal ASAP. This hybrid Wrangler brings next-level capability to the Rubicon and beyond, but safety comes first. We'll keep you posted on the fix so you can get back to dominating the dirt.</p><p>What about you – got a 4xe in the garage? Have you dealt with recalls before, or is this your first rodeo? Drop your thoughts in the comments – let's talk trail fixes and hybrid life!</p>
         </div>
 
-<!-- START FOOTER PRO JEEPME -->
-    <style>
-        /* CSS Khusus Footer agar Rapi */
-        .site-footer { 
-            background: #050505; 
-            padding: 60px 0 30px; 
-            border-top: 3px solid #ffba00; 
-            margin-top: 80px; 
-            color: #888; 
-            font-family: 'Roboto', sans-serif;
-        }
-        .footer-container { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            padding: 0 20px; 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-            gap: 40px; 
-        }
-        .footer-col h3 { 
-            color: #fff; 
-            font-family: 'Russo One', sans-serif; 
-            text-transform: uppercase; 
-            margin-bottom: 20px; 
-            letter-spacing: 1px;
-            font-size: 1.2rem;
-        }
-        .footer-desc { 
-            line-height: 1.6; 
-            font-size: 0.95rem; 
-            margin-bottom: 20px;
-        }
-        .footer-links { 
-            list-style: none; 
-            padding: 0; 
-            margin: 0; 
-        }
-        .footer-links li { 
-            margin-bottom: 12px; 
-        }
-        .footer-links a { 
-            color: #aaa; 
-            text-decoration: none; 
-            transition: color 0.3s ease; 
-            font-size: 0.95rem;
-        }
-        .footer-links a:hover { 
-            color: #ffba00; 
-            padding-left: 5px; /* Efek geser dikit pas dihover */
-        }
-        .footer-bottom { 
-            text-align: center; 
-            margin-top: 50px; 
-            padding-top: 25px; 
-            border-top: 1px solid #222; 
-            font-size: 0.85rem; 
-            color: #555;
-        }
-    </style>
-
-    <footer class="site-footer">
-        <div class="footer-container">
+        <footer class="article-footer">
+            <div style="margin-bottom: 10px; font-weight: bold; color: #fff;">Tags:</div>
             
-            <!-- Kolom 1: Tentang Brand -->
-            <div class="footer-col">
-                <h3>JeepMe</h3>
-                <p class="footer-desc">
-                    The premier digital destination for Jeep enthusiasts. Born for the trail, built for the community. Covering Wrangler, Gladiator, and the future of 4x4.
-                </p>
-                <div style="margin-top: 10px;">
-                    <a href="/feed.xml" style="color: #ffba00; text-decoration: none; font-weight: bold; display: flex; align-items: center; gap: 5px;">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z" /></svg>
-                        Subscribe RSS
-                    </a>
-                </div>
-            </div>
-
-            <!-- Kolom 2: Navigasi Cepat -->
-            <div class="footer-col">
-                <h3>Explore</h3>
-                <ul class="footer-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/category/wrangler.html">Jeep Wrangler News</a></li>
-                    <li><a href="/category/gladiator.html">Jeep Gladiator</a></li>
-                    <li><a href="/category/offroad-tech.html">Off-Road Tech</a></li>
-                    <li><a href="/category/concepts.html">Future Concepts</a></li>
-                </ul>
-            </div>
-
-            <!-- Kolom 3: LEGAL (WAJIB UNTUK ADSENSE) -->
-            <div class="footer-col">
-                <h3 style="color: #ffba00;">Legal Info</h3>
-                <ul class="footer-links">
-                    <li><a href="/about.html">About Us</a></li>
-                    <li><a href="/contact.html">Contact Us</a></li>
-                    <li><a href="/privacy.html">Privacy Policy</a></li>
-                    <li><a href="/terms.html">Terms of Service</a></li>
-                    <li><a href="/disclaimer.html">Disclaimer & Disclosure</a></li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-            <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-                <p>&copy; 2026 Viral News Hub. All rights reserved.</p>
-                <p>Jeep® is a registered trademark of FCA US LLC. This site is an independent enthusiast publication and is not affiliated with FCA US LLC or Stellantis.</p>
-            </div>
-        </div>
-    </footer>
-    <!-- END FOOTER PRO JEEPME -->
+            <a href="#" class="tag">#Jeep Life</a>
+            
+            <a href="#" class="tag">#4x4</a>
+            
+            <a href="#" class="tag">#Off-Road</a>
+            
+            <a href="#" class="tag">#Wrangler 4xe</a>
+            
+            <a href="#" class="tag">#Automotive News</a>
+            
+            <a href="#" class="tag">#Recall Alert</a>
+            
+            <a href="#" class="tag">#Jeep</a>
+            
+            <a href="#" class="tag">#4x4</a>
+            
+            <a href="#" class="tag">#Offroad</a>
+            
+        </footer>
     </article>
 
     <!-- Related Articles -->
-    <section class="related-articles" style="background: #0a0a0a; padding: 60px 0; border-top: 2px solid #333;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <h2 class="section-title" style="color: #fff; font-family: 'Russo One'; margin-bottom: 30px;">READ NEXT</h2>
-            <div class="articles-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+    <section style="background: #0a0a0a; padding: 60px 0; border-top: 2px solid #222;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <h2 style="color: #fff; font-family: 'Russo One'; margin-bottom: 30px; text-transform: uppercase;">Next Adventure</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
                 
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="site-footer" style="background: #000; padding: 40px 0; text-align: center; border-top: 1px solid #333;">
-        <p style="color: #666;">&copy; 2026 Viral News Hub. Born for the trail.</p>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>JeepMe</h3>
+                <p style="color: #888; font-size: 0.9rem; line-height: 1.6;">
+                    The ultimate digital garage for Jeep enthusiasts. We cover news, mods, and the off-road lifestyle.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="/category/wrangler.html">Wrangler</a></li>
+                    <li><a href="/category/gladiator.html">Gladiator</a></li>
+                    <li><a href="/category/offroad-tech.html">Tech Guides</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/terms.html">Terms of Service</a></li>
+                    <li><a href="/disclaimer.html">Disclaimer</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Viral News Hub. Not affiliated with Jeep®/Stellantis.
+        </div>
     </footer>
 
 </body>
