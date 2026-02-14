@@ -1,71 +1,77 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Latest &amp; Viral News from Around the World">
-    <title>Viral News Hub - Berita Terkini & Viral</title>
+    <title>Viral News Hub - Off-Road & Jeep Lifestyle</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/home.css">
-
+    
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/assets/favicon.png">
-
-    <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title="Viral News Hub" href="/feed.xml">
+
+    <style>
+        /* Inline overrides for Jeep Theme */
+        :root {
+            --primary-color: #ffba00;
+            --bg-dark: #121212;
+            --text-light: #e0e0e0;
+        }
+        body { font-family: 'Roboto', sans-serif; background-color: var(--bg-dark); color: var(--text-light); }
+        h1, h2, h3, .logo-text, .nav-link { font-family: 'Russo One', sans-serif; letter-spacing: 1px; }
+        .logo-text { color: #fff; text-transform: uppercase; }
+        .logo-text span { color: var(--primary-color); }
+        .nav-link { text-transform: uppercase; font-size: 0.9rem; }
+        .nav-link:hover, .nav-link.active { color: var(--primary-color); }
+        .hero { border-bottom: 3px solid var(--primary-color); padding: 60px 0; background: #0a0a0a; }
+        .hero-title { font-size: 3.5rem; text-transform: uppercase; color: #fff; margin-bottom: 10px; }
+        .hero-title span { color: var(--primary-color); }
+        .category-badge { background: var(--primary-color); color: #000; font-weight: bold; text-transform: uppercase; }
+        .btn-subscribe { background: var(--primary-color); color: #000; font-weight: bold; border: none; padding: 10px 20px; cursor: pointer; }
+    </style>
 </head>
 
 <body class="home-page">
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" style="background: #000; border-bottom: 2px solid #333;">
         <div class="container">
             <div class="nav-wrapper">
                 <a href="/" class="logo">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" class="logo-icon">
-                        <path d="M6 6L14 26H18L26 6" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        <circle cx="26" cy="26" r="3" fill="#ef4444" />
+                    <!-- Icon Jeep Grill Simple -->
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #ffba00; margin-right: 10px;">
+                        <rect x="2" y="5" width="20" height="14" rx="2" />
+                        <line x1="6" y1="5" x2="6" y2="19" />
+                        <line x1="10" y1="5" x2="10" y2="19" />
+                        <line x1="14" y1="5" x2="14" y2="19" />
+                        <line x1="18" y1="5" x2="18" y2="19" />
+                        <circle cx="4" cy="12" r="1" fill="currentColor"/>
+                        <circle cx="20" cy="12" r="1" fill="currentColor"/>
                     </svg>
-                    <span class="logo-text">Viral News Hub</span>
+                    <span class="logo-text">JEEP<span>ME</span></span>
                 </a>
 
                 <div class="nav-menu">
                     <a href="/" class="nav-link active">Home</a>
-                    <a href="/category/technology.html" class="nav-link">Technology</a>
-                    <a href="/category/business.html" class="nav-link">Business</a>
-                    <a href="/category/entertainment.html" class="nav-link">Entertainment</a>
-                    <a href="/category/sports.html" class="nav-link">Sports</a>
-                    <a href="/category/health.html" class="nav-link">Health</a>
-                    <a href="/category/science.html" class="nav-link">Science</a>
+                    <a href="/category/wrangler.html" class="nav-link">Wrangler</a>
+                    <a href="/category/gladiator.html" class="nav-link">Gladiator</a>
+                    <a href="/category/grand-cherokee.html" class="nav-link">Grand Cherokee</a>
+                    <a href="/category/offroad-tech.html" class="nav-link">Tech</a>
+                    <a href="/category/concepts.html" class="nav-link">Concepts</a>
                 </div>
 
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2" />
-                        <path
-                            d="M10 2V4M10 16V18M18 10H16M4 10H2M15.657 4.343L14.243 5.757M5.757 14.243L4.343 15.657M15.657 15.657L14.243 14.243M5.757 5.757L4.343 4.343"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                    </svg>
-                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
-
                 <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span style="background: #fff;"></span>
+                    <span style="background: #fff;"></span>
+                    <span style="background: #fff;"></span>
                 </button>
             </div>
         </div>
@@ -73,32 +79,32 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
+        <div class="container" style="text-align: center;">
             <div class="hero-content">
-                <h1 class="hero-title">Viral News Hub</h1>
-                <p class="hero-subtitle">Latest &amp; Viral News from Around the World</p>
+                <h1 class="hero-title">LIVE <span>OFF-ROAD</span></h1>
+                <p class="hero-subtitle" style="color: #aaa; max-width: 600px; margin: 0 auto;">Latest &amp; Viral News from Around the World</p>
             </div>
         </div>
     </section>
 
     <!-- Featured Articles -->
-    <section class="featured-section">
+    <section class="featured-section" style="padding: 40px 0;">
         <div class="container">
-            <h2 class="section-title">🔥 Trending Now</h2>
+            <h2 class="section-title" style="border-left: 4px solid #ffba00; padding-left: 15px; color: #fff;">🔥 TOP STORIES</h2>
+            
             <div class="featured-grid">
                 
-                <article class="featured-main">
+                <article class="featured-main" style="border: 1px solid #333; background: #1e1e1e;">
                     <a href="/posts/jeep-wrangler-4xe-recall-battery-fire-risk-320000.html" class="featured-link">
                         <div class="featured-image">
                             <img src="/images/jeep-wrangler-4xe-recall-battery-fire-risk-320000-1771054721.jpg" alt="Jeep Wrangler 4xe Recall Alert: 320,000 Hybrids at Fire Risk – What Trail-Ready Owners Need to Know" loading="lazy">
                             <span class="category-badge">wrangler</span>
                         </div>
                         <div class="featured-content">
-                            <h3 class="featured-title">Jeep Wrangler 4xe Recall Alert: 320,000 Hybrids at Fire Risk – What Trail-Ready Owners Need to Know</h3>
-                            <p class="featured-excerpt">Big recall hits the Jeep Wrangler 4xe – potential battery fire risk has owners parking outside. Here&#39;s the rugged truth on your hybrid trail beast.</p>
+                            <h3 class="featured-title" style="font-family: 'Russo One';">Jeep Wrangler 4xe Recall Alert: 320,000 Hybrids at Fire Risk – What Trail-Ready Owners Need to Know</h3>
+                            <p class="featured-excerpt" style="color: #bbb;">Big recall hits the Jeep Wrangler 4xe – potential battery fire risk has owners parking outside. Here&#39;s the rugged truth on your hybrid trail beast.</p>
                             <div class="featured-meta">
-                                <time datetime="2026-02-14T14:38:41.309568">14 February 2026</time>
-                                <span class="reading-time">2 min read</span>
+                                <time style="color: #ffba00;">14 February 2026</time>
                             </div>
                         </div>
                     </a>
@@ -115,22 +121,18 @@
     <!-- Recent Articles -->
     <section class="recent-section">
         <div class="container">
-            <h2 class="section-title">📰 Latest News</h2>
-            <div class="articles-grid">
+            <h2 class="section-title" style="border-left: 4px solid #ffba00; padding-left: 15px; color: #fff; margin-top: 40px;">📰 LATEST DROPS</h2>
+            <div class="articles-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
                 
-                <article class="article-card">
-                    <a href="/posts/jeep-wrangler-4xe-recall-battery-fire-risk-320000.html" class="article-card-link">
-                        <div class="article-card-image">
-                            <img src="/images/jeep-wrangler-4xe-recall-battery-fire-risk-320000-1771054721.jpg" alt="Jeep Wrangler 4xe Recall Alert: 320,000 Hybrids at Fire Risk – What Trail-Ready Owners Need to Know" loading="lazy">
-                            <span class="category-badge">wrangler</span>
+                <article class="article-card" style="background: #1e1e1e; border: 1px solid #333; border-radius: 6px; overflow: hidden;">
+                    <a href="/posts/jeep-wrangler-4xe-recall-battery-fire-risk-320000.html" class="article-card-link" style="text-decoration: none;">
+                        <div class="article-card-image" style="height: 200px; overflow: hidden;">
+                            <img src="/images/jeep-wrangler-4xe-recall-battery-fire-risk-320000-1771054721.jpg" alt="Jeep Wrangler 4xe Recall Alert: 320,000 Hybrids at Fire Risk – What Trail-Ready Owners Need to Know" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
-                        <div class="article-card-content">
-                            <h3 class="article-card-title">Jeep Wrangler 4xe Recall Alert: 320,000 Hybrids at Fire Risk – What Trail-Ready Owners Need to Know</h3>
-                            <p class="article-card-excerpt">Big recall hits the Jeep Wrangler 4xe – potential battery fire risk has owners parking outside. Here&#39;s the rugged truth on your hybrid trail beast.</p>
-                            <div class="article-card-meta">
-                                <time datetime="2026-02-14T14:38:41.309568">14 February 2026</time>
-                                <span class="reading-time">2 min</span>
-                            </div>
+                        <div class="article-card-content" style="padding: 20px;">
+                            <span class="category-badge" style="background: transparent; color: #ffba00; padding: 0; margin-bottom: 10px; display: block;">wrangler</span>
+                            <h3 class="article-card-title" style="color: #fff; font-size: 1.2rem; margin: 0 0 10px 0;">Jeep Wrangler 4xe Recall Alert: 320,000 Hybrids at Fire Risk – What Trail-Ready Owners Need to Know</h3>
+                            <p class="article-card-excerpt" style="color: #999; font-size: 0.9rem;">Big recall hits the Jeep Wrangler 4xe – potential battery fire risk has owners parking outside. Here...</p>
                         </div>
                     </a>
                 </article>
@@ -139,77 +141,40 @@
         </div>
     </section>
 
-    <!-- Categories Section -->
-    <section class="categories-section">
-        <div class="container">
-            <h2 class="section-title">📂 Explore Categories</h2>
-            <div class="categories-grid">
-                
-                <div class="category-card">
-                    <a href="/kategori/wrangler.html" class="category-card-link">
-                        <div class="category-icon">
-                            
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <circle cx="12" cy="12" r="10" />
-                                <line x1="12" y1="8" x2="12" y2="12" />
-                                <line x1="12" y1="16" x2="12.01" y2="16" />
-                            </svg>
-                            
-                        </div>
-                        <h3 class="category-name">Wrangler</h3>
-                        <p class="category-count">1 articles</p>
-                    </a>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer class="site-footer" style="background: #000; border-top: 2px solid #333; margin-top: 60px; padding: 40px 0;">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px;">
                 <div class="footer-section">
-                    <h3 class="footer-title">Viral News Hub</h3>
-                    <p class="footer-description">Latest &amp; Viral News from Around the World</p>
+                    <h3 class="footer-title" style="color: #fff;">Viral News Hub</h3>
+                    <p class="footer-description" style="color: #666;">Born for the trail. The ultimate resource for Jeep enthusiasts.</p>
                 </div>
 
                 <div class="footer-section">
-                    <h4 class="footer-subtitle">Categories</h4>
-                    <ul class="footer-links">
-                        <li><a href="/category/technology.html">Technology</a></li>
-                        <li><a href="/category/business.html">Business</a></li>
-                        <li><a href="/category/entertainment.html">Entertainment</a></li>
-                        <li><a href="/category/sports.html">Sports</a></li>
+                    <h4 class="footer-subtitle" style="color: #ffba00;">Categories</h4>
+                    <ul class="footer-links" style="list-style: none; padding: 0;">
+                        <li><a href="/category/wrangler.html" style="color: #888; text-decoration: none;">Wrangler News</a></li>
+                        <li><a href="/category/gladiator.html" style="color: #888; text-decoration: none;">Gladiator</a></li>
+                        <li><a href="/category/offroad-tech.html" style="color: #888; text-decoration: none;">Off-Road Tech</a></li>
+                        <li><a href="/category/ev-jeep.html" style="color: #888; text-decoration: none;">Electric 4xe</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h4 class="footer-subtitle">Subscribe</h4>
-                    <p>Get the latest news updates</p>
-                    <a href="/feed.xml" class="rss-link">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z" />
-                        </svg>
+                    <h4 class="footer-subtitle" style="color: #ffba00;">Connect</h4>
+                    <a href="/feed.xml" class="rss-link" style="color: #fff; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z" /></svg>
                         RSS Feed
                     </a>
                 </div>
             </div>
 
-            <div class="footer-bottom">
-                <p>&copy; 2026 Viral News Hub. All rights reserved.</p>
-                <div class="footer-links-bottom">
-                    <a href="/privacy.html">Privacy Policy</a>
-                    <a href="/terms.html">Terms of Service</a>
-                </div>
+            <div class="footer-bottom" style="text-align: center; border-top: 1px solid #222; margin-top: 40px; padding-top: 20px; color: #444;">
+                <p>&copy; 2026 Viral News Hub. Not affiliated with Jeep®/Stellantis.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="/assets/js/main.js"></script>
 </body>
-
 </html>
