@@ -142,38 +142,117 @@
     </section>
 
     <!-- Footer -->
-    <footer class="site-footer" style="background: #000; border-top: 2px solid #333; margin-top: 60px; padding: 40px 0;">
-        <div class="container">
-            <div class="footer-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px;">
-                <div class="footer-section">
-                    <h3 class="footer-title" style="color: #fff;">Viral News Hub</h3>
-                    <p class="footer-description" style="color: #666;">Born for the trail. The ultimate resource for Jeep enthusiasts.</p>
-                </div>
+<!-- START FOOTER PRO JEEPME -->
+    <style>
+        /* CSS Khusus Footer agar Rapi */
+        .site-footer { 
+            background: #050505; 
+            padding: 60px 0 30px; 
+            border-top: 3px solid #ffba00; 
+            margin-top: 80px; 
+            color: #888; 
+            font-family: 'Roboto', sans-serif;
+        }
+        .footer-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 40px; 
+        }
+        .footer-col h3 { 
+            color: #fff; 
+            font-family: 'Russo One', sans-serif; 
+            text-transform: uppercase; 
+            margin-bottom: 20px; 
+            letter-spacing: 1px;
+            font-size: 1.2rem;
+        }
+        .footer-desc { 
+            line-height: 1.6; 
+            font-size: 0.95rem; 
+            margin-bottom: 20px;
+        }
+        .footer-links { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+        }
+        .footer-links li { 
+            margin-bottom: 12px; 
+        }
+        .footer-links a { 
+            color: #aaa; 
+            text-decoration: none; 
+            transition: color 0.3s ease; 
+            font-size: 0.95rem;
+        }
+        .footer-links a:hover { 
+            color: #ffba00; 
+            padding-left: 5px; /* Efek geser dikit pas dihover */
+        }
+        .footer-bottom { 
+            text-align: center; 
+            margin-top: 50px; 
+            padding-top: 25px; 
+            border-top: 1px solid #222; 
+            font-size: 0.85rem; 
+            color: #555;
+        }
+    </style>
 
-                <div class="footer-section">
-                    <h4 class="footer-subtitle" style="color: #ffba00;">Categories</h4>
-                    <ul class="footer-links" style="list-style: none; padding: 0;">
-                        <li><a href="/category/wrangler.html" style="color: #888; text-decoration: none;">Wrangler News</a></li>
-                        <li><a href="/category/gladiator.html" style="color: #888; text-decoration: none;">Gladiator</a></li>
-                        <li><a href="/category/offroad-tech.html" style="color: #888; text-decoration: none;">Off-Road Tech</a></li>
-                        <li><a href="/category/ev-jeep.html" style="color: #888; text-decoration: none;">Electric 4xe</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4 class="footer-subtitle" style="color: #ffba00;">Connect</h4>
-                    <a href="/feed.xml" class="rss-link" style="color: #fff; text-decoration: none; display: flex; align-items: center; gap: 5px;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z" /></svg>
-                        RSS Feed
+    <footer class="site-footer">
+        <div class="footer-container">
+            
+            <!-- Kolom 1: Tentang Brand -->
+            <div class="footer-col">
+                <h3>JeepMe</h3>
+                <p class="footer-desc">
+                    The premier digital destination for Jeep enthusiasts. Born for the trail, built for the community. Covering Wrangler, Gladiator, and the future of 4x4.
+                </p>
+                <div style="margin-top: 10px;">
+                    <a href="/feed.xml" style="color: #ffba00; text-decoration: none; font-weight: bold; display: flex; align-items: center; gap: 5px;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z" /></svg>
+                        Subscribe RSS
                     </a>
                 </div>
             </div>
 
-            <div class="footer-bottom" style="text-align: center; border-top: 1px solid #222; margin-top: 40px; padding-top: 20px; color: #444;">
-                <p>&copy; 2026 Viral News Hub. Not affiliated with Jeep®/Stellantis.</p>
+            <!-- Kolom 2: Navigasi Cepat -->
+            <div class="footer-col">
+                <h3>Explore</h3>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/category/wrangler.html">Jeep Wrangler News</a></li>
+                    <li><a href="/category/gladiator.html">Jeep Gladiator</a></li>
+                    <li><a href="/category/offroad-tech.html">Off-Road Tech</a></li>
+                    <li><a href="/category/concepts.html">Future Concepts</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom 3: LEGAL (WAJIB UNTUK ADSENSE) -->
+            <div class="footer-col">
+                <h3 style="color: #ffba00;">Legal Info</h3>
+                <ul class="footer-links">
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/terms.html">Terms of Service</a></li>
+                    <li><a href="/disclaimer.html">Disclaimer & Disclosure</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+                <p>&copy; 2026 Viral News Hub. All rights reserved.</p>
+                <p>Jeep® is a registered trademark of FCA US LLC. This site is an independent enthusiast publication and is not affiliated with FCA US LLC or Stellantis.</p>
             </div>
         </div>
     </footer>
+    <!-- END FOOTER PRO JEEPME -->
 
     <script src="/assets/js/main.js"></script>
 </body>
